@@ -1,0 +1,98 @@
+.carousel {
+  position: relative;
+  max-width: 550px;
+  height: auto;
+  overflow-x: hidden;
+}
+
+.carousel .directions a {
+   position: absolute;
+   width: 50%;
+   height: 100%;
+   z-index: 3;
+  vertical-align: middle;
+}
+
+.carousel .directions a:last-child {
+  margin-left: 50%;
+  text-align: right;
+}
+.carousel .directions img {
+  margin: 20px;
+  margin-top: 58%;
+  width: 30px;
+}
+.carousel .directions a:last-child img {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.carousel .imgs img {
+  position: absolute;
+  width: 100%;
+  top: 0; left: 0;
+  -webkit-transform: translate(100%,0);
+  transform: translate(100%,0);
+  z-index: 1;
+}
+
+.carousel .imgs img:first-child {
+  position: relative; /* responsive magic */ 
+}
+
+.removeImgLeft {
+  -webkit-animation: removeImgAnim 0.5s forwards;
+    animation: removeImgAnim 0.5s forwards;
+}
+
+@-webkit-keyframes removeImgAnim {
+    0% { -webkit-transform: translate(0,0) }
+    100% {  -webkit-transform: translate(-100%,0) }
+}
+@keyframes removeImgAnim {
+    0% { transform: translate(0%,0); }
+    100% { transform: translate(-100%,0); }
+}
+
+.addImgLeft {
+  -webkit-animation: addImgAnim 0.5s forwards;
+    animation: addImgAnim 0.5s forwards;
+}
+
+@-webkit-keyframes addImgAnim {
+    0% { -webkit-transform: translate(100%,0) }
+    100% { -webkit-transform: translate(0,0)}
+}
+@keyframes addImgAnim {
+    0% { transform: translate(100%,0); }
+    100% { transform: translate(0,0); }
+}
+
+
+.removeImgRight {
+  -webkit-animation: removeImgAnimRight 0.5s forwards;
+    animation: removeImgAnimRight 0.5s forwards;
+}
+
+@-webkit-keyframes removeImgAnimRight {
+    0% { -webkit-transform: translate(0,0) }
+    100% {  -webkit-transform: translate(100%,0) }
+}
+@keyframes removeImgAnimRight {
+    0% { transform: translate(0%,0); }
+    100% { transform: translate(100%,0); }
+}
+
+.addImgRight {
+  -webkit-animation: addImgAnimRight 0.5s forwards;
+    animation: addImgAnimRight 0.5s forwards;
+}
+
+@-webkit-keyframes addImgAnimRight {
+    0% { -webkit-transform: translate(-100%,0) }
+    100% { -webkit-transform: translate(0,0)}
+}
+@keyframes addImgAnimRight {
+    0% { transform: translate(-100%,0); }
+    100% { transform: translate(0,0); }
+}
